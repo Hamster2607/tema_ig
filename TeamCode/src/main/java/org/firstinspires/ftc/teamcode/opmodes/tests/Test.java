@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.opmodes.tests;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
@@ -21,6 +22,9 @@ public class Test extends RobotOpMode {
         motor_right = hardwareMap.get(DcMotor.class, "motor_right");
         arm_pivot = hardwareMap.get(Servo.class, "arm_pivot");
         claw = hardwareMap.get(Servo.class, "claw");
+
+        motor_left.setDirection(DcMotorSimple.Direction.FORWARD);
+        motor_right.setDirection(DcMotorSimple.Direction.REVERSE);
 
         boolean clawX = false;
         boolean clawIsOpen = false;
